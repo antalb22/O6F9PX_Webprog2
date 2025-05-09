@@ -10,7 +10,7 @@ export const GET: RequestHandler = async () => {
     return json(throws);
 };
 
-export async function POST({request}) {
+export const POST: RequestHandler = async ({request}) => {
 
     const {playerId, gameId, points, isWinner = false, playerName} = await request.json();
 

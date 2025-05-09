@@ -10,6 +10,9 @@ export const GET: RequestHandler = async ({params}) => {
     if (!game) {
         return json({error: 'Game not found'}, {status: 404});
     }
-    
-    return json(game);
+
+    return new Response(JSON.stringify({success: true, game}), {
+        headers: {'Content-Type': 'application/json'},
+        status: 200
+    });
 };

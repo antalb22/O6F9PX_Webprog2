@@ -16,10 +16,10 @@
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                player1: player1,
+                player1,
                 player2: playerCount === 2 ? player2 : null,
                 mode: gameMode,
-                double_out: doubleOut,
+                doubleOut,
             })
         });
 

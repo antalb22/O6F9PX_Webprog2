@@ -1,5 +1,5 @@
 import db from '$lib/db/db';
-import {json} from '@sveltejs/kit';
+import {json, type RequestHandler} from '@sveltejs/kit';
 
 type Game = {
     id: number;
@@ -15,7 +15,7 @@ type Throw = {
     points: number;
 };
 
-export function GET() {
+export const GET: RequestHandler = () => {
     const games = db.prepare(`
         SELECT id, player1, player2, finished, winner
         FROM games
